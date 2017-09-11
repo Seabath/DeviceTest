@@ -14,7 +14,7 @@ public class Algo {
             Device tmp = list.get(0);
             list.remove(tmp);
             int i = 0;
-            while (i < res.size() && compareDevice(tmp, res.get(i)) < 0) {
+            while (i < res.size() && compareDevice(tmp, res.get(i)) > 0) {
                 i++;
             }
             res.add(i, tmp);
@@ -32,11 +32,11 @@ public class Algo {
             return 1;
 
         String[] tabDev1 = dev1.getVersion().split("\\.");
-        List<String> listDev1 = removeZero((ArrayList<String>) Arrays.asList(tabDev1));
+        List<String> listDev1 = removeZero(new ArrayList<String>(Arrays.asList(tabDev1)));
 
 
         String[] tabDev2 = dev2.getVersion().split("\\.");
-        List<String> listDev2 = removeZero((ArrayList<String>) Arrays.asList(tabDev2));
+        List<String> listDev2 = removeZero(new ArrayList<String>(Arrays.asList(tabDev2)));
 
         int i = 0;
         while (i < listDev1.size() - 1 && i < listDev2.size() - 1 && listDev1.get(i).compareTo(listDev2.get(i)) == 0)

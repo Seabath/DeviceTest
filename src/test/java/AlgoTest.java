@@ -25,9 +25,9 @@ public class AlgoTest {
         test.add(new Device("b", "7"));
         test.add(new Device("b", "6.4.2"));
         List<Device> res = Algo.tri(test);
-        assert test.get(0).getVersion().equals("6.4.2");
-        assert test.get(1).getVersion().equals("7");
-        assert test.get(2).getVersion().equals("7.0");
+        assert res.get(0).getVersion().equals("6.4.2");
+        assert res.get(1).getVersion().equals("7");
+        assert res.get(2).getVersion().equals("7.0");
     }
 
 
