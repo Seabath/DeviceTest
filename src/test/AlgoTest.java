@@ -45,7 +45,7 @@ public class AlgoTest {
     List<Device> res = Algo.tri(test);
     assert res.get(0).getVersion().equals("6.4.2");
     assert res.get(1).getVersion().equals("7");
-    assert res.get(2).getVersion().equals("7.00");
+    assert res.get(2).getVersion().equals("7");
   }
 
 
@@ -76,10 +76,10 @@ public class AlgoTest {
 
   @Test
   public void removeZeroTest() {
-    assert removeZero(null) == null;
-    assert removeZero(new ArrayList<String>()).isEmpty();
+    assert removeZero((String) null).isEmpty();
+    assert removeZero(new ArrayList<>()).isEmpty();
 
-    ArrayList<String> test = new ArrayList<String>();
+    ArrayList<String> test = new ArrayList<>();
     test.add("7");
     assert removeZero(test).size() == 1;
 

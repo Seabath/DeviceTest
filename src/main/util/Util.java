@@ -1,9 +1,31 @@
 package util;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class Util {
+
+  static public String removeZeroString(String version) {
+    if (version == null) {
+      return null;
+    }
+    return removeZero(version).stream()
+        .map(s -> s.concat("."))
+        .collect(Collectors.joining())
+        .replaceFirst(".$", "");
+  }
+
+  static public List<String> removeZero(String version) {
+    if (version == null) {
+      return new ArrayList<>();
+    }
+    String[] tabVersion = version.split("\\.");
+    return removeZero(new ArrayList<>(Arrays.asList(tabVersion)));
+  }
+
   static public List<String> removeZero(List<String> list) {
     if (list == null || list.isEmpty()) {
       return list;
